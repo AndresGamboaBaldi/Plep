@@ -13,7 +13,7 @@ app.use(bodyparser.json());
 app.set('Port',4000)
 
 app.use(morgan('dev'))
-//app.use('/api/', require('./routes/user.route'))
+app.use('/api/', require('./routes/user.route'))
 
 
 app.listen(app.get('Port'), ()=>{
