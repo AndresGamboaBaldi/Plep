@@ -7,4 +7,4 @@ const movieSchema = new Schema({
     img:{ data: Buffer, contentType: String},
     url:{type : String, require:"true"}
 })
-module.exports = mongoose.model('users', movieSchema)
+module.exports = mongoose.model('movies', movieSchema)
