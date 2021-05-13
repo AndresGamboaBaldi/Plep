@@ -10,10 +10,15 @@ require("./database")
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 
-app.set('Port',4000)
+app.set('Port',process.env.PORT || 4000)
+
+app.use(cors())
 
 app.use(morgan('dev'))
-//app.use('/api/', require('./routes/user.route'))
+
+app.use('/api/', require('./routes/movie.route'))
+
+app.use('/api/', require('./routes/user.route'))
 
 
 app.listen(app.get('Port'), ()=>{
